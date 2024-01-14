@@ -1,0 +1,22 @@
+# Bytecode compiled files
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+env/
+
+# Log files
+*.log
+
+# Configuration files with sensitive information
+*.ini
+*.conf
+
+# File containing passwords (IMPORTANT for security)
+password.txt
+
+# Operating System generated files
+.DS_Store # macOS
+Thumbs.db # Windows
