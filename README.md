@@ -4,7 +4,7 @@ A simple password generator built with Python and PySimpleGUI.
 
 ## Description
 
-This password manager script provides a graphical user interface to generate strong, random passwords based on user-defined length and character sets, including uppercase and lowercase letters, digits, and special characters.
+This password generator script provides a graphical user interface to generate strong, random passwords based on user-defined length and character sets, including uppercase and lowercase letters, digits, and special characters.
 
 ## Features
 
