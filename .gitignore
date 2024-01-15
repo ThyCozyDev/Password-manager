@@ -15,7 +15,7 @@ env/
 *.conf
 
 # File containing passwords (IMPORTANT for security)
-password.txt
+passwords.txt
 
 # Operating System generated files
 .DS_Store # macOS
