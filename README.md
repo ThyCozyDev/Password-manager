@@ -51,7 +51,7 @@ The GUI will prompt you to enter the desired password length and the purpose for
 
 ## Updates
 
-1.1
+1.1:
 
 * Added a list that shows the generated passwords.
 * Added a Copy button to copy the selected password from the list.
