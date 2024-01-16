@@ -1,6 +1,6 @@
-## Password Manager
+## Password Generator
 
-A simple password generator built with Python and PySimpleGUI.
+A simple password Generator built with Python and PySimpleGUI.
 
 ## Description
 
@@ -16,6 +16,7 @@ This password generator script provides a graphical user interface to generate s
 
 - Python 3.x
 - PySimpleGUI
+- pyperclip
 
 ## Installation
 
@@ -35,7 +36,7 @@ pip install pyperclip
 
 ## Usage
 
-To use the password manager, run the `pass manager.py` script:
+To use the password generator, run the `pass manager.py` script:
 
 ```bash
 python "PATH_TO_SCRIPT\password generator.py"
@@ -50,6 +51,12 @@ python3 "PATH_TO_SCRIPT\password generator.py"
 The GUI will prompt you to enter the desired password length and the purpose for which the password is being generated (e.g., the name of a website or application). After clicking the "Generate" button, the password will be displayed and saved to a file named `password.txt`. You can access the passwords from the list and copy them by clicking on the Copy button (You need to select a password first!).
 
 ## Updates
+
+1.2:
+
+* Added a delete button to delete unwanted or mistakenly generated passwords
+* Improved the redability of the code
+* Improved Error Handling
 
 1.1:
 
