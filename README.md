@@ -52,11 +52,15 @@ The GUI will prompt you to enter the desired password length and the purpose for
 
 ## Updates
 
+1.3:
+
+* Added a Themes button so you will never get bored of the theme.
+
 1.2:
 
-* Added a delete button to delete unwanted or mistakenly generated passwords
-* Improved the redability of the code
-* Improved Error Handling
+* Added a delete button to delete unwanted or mistakenly generated passwords.
+* Improved the redability of the code.
+* Improved Error Handling.
 
 1.1:
 
