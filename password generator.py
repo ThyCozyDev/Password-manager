@@ -3,6 +3,12 @@ import pyperclip
 from functions import functions
 
 
+themes_list = sg.theme_list()
+
+theme_menu = []
+for theme in themes_list:
+    theme_menu.append(['Themes', [themes_list]])
+
 function_instance = functions()
 
 PASSWORDS_FILE = "passwords.txt"
@@ -17,7 +23,8 @@ layout = [
     [sg.Text(text="Passwords")],
     [sg.Listbox(values=passwords, size=(50, 10), key="PASSWORDLIST"),
       sg.Button(button_text="Delete", key="DeleteButton")],
-    [sg.Button(button_text="Copy password", key="copy_button")],
+    [sg.Button(button_text="Copy password", key="copy_button"), sg.ButtonMenu(
+        button_text="Themes", key="ThemesButton", menu_def=theme_menu)]
 ]
 
 window = sg.Window("Password Generator", layout)
@@ -57,11 +64,31 @@ while True:
         selected_password = values["PASSWORDLIST"][0]
         password = selected_password.split(": ")[-1]
         pyperclip.copy(password)
+    
+
+    if event == "ThemesButton":
+        theme_name = values["ThemesButton"]
+        sg.theme(theme_name)
+        window.close()
+
+        layout.clear()
+
+        layout = [[sg.Text("Password Length:"), sg.InputText(key="length")],
+        [sg.Text("What are you using this for:"), sg.InputText(key="Website")],
+        [sg.Button("Generate", key="button")],
+        [sg.InputText(readonly=True, key="Password")],
+        [sg.Text(text="Passwords")],
+        [sg.Listbox(values=passwords, size=(50, 10), key="PASSWORDLIST"),
+        sg.Button(button_text="Delete", key="DeleteButton")],
+        [sg.Button(button_text="Copy password", key="copy_button"), sg.ButtonMenu(
+            button_text="Themes", key="ThemesButton", menu_def=theme_menu)]]
+
+        window = sg.Window("Password Generator", layout, finalize=True)
 
     if event == "DeleteButton":
         selected_password = values["PASSWORDLIST"][0]
         function_instance.delete_password(selected_password=selected_password, passwords=passwords)
         # Update the Listbox with the new passwords list
         window["PASSWORDLIST"].update(values=passwords)
-
+    
 window.close()
