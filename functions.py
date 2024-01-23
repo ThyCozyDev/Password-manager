@@ -1,8 +1,9 @@
 import string
 import random
+import json
 
 
-class functions():
+class PasswordFunctions:
 
     def generate_password(self, password_length):
         """
@@ -40,5 +41,18 @@ class functions():
         # Update the passwords file
         with open("passwords.txt", "w", encoding="utf-8") as password_file:
             for password in passwords:
-                password_file.write(password + "\n")
-        
+                password_file.write(password + "\n")      
+                
+    CONFIG_FILE = "config.json"
+
+    def save_theme(self, theme_name):
+        with open('config.json', 'w', encoding='utf-8') as config_file:
+            json.dump({'theme': theme_name}, config_file)
+
+    def load_theme(self):
+        try:
+            with open('config.json', 'r', encoding='utf-8') as config_file:
+                config = json.load(config_file)
+                return config.get('theme', 'Fusion')  # Default to 'Fusion' if not set
+        except FileNotFoundError:
+            return 'Fusion'  # Default to 'Fusion' if config file does not exist
