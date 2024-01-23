@@ -18,5 +18,5 @@ env/
 passwords.txt
 
 # Operating System generated files
-.DS_Store # macOS
-Thumbs.db # Windows
+.DS_Store
+Thumbs.db
