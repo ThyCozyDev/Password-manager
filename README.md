@@ -1,42 +1,38 @@
-## Password Generator
+## Password Manager
 
-A simple password Generator built with Python and PySimpleGUI.
+A robust password manager built with Python and PyQt6.
 
 ## Description
 
-This password generator script provides a graphical user interface to generate strong, random passwords based on user-defined length and character sets, including uppercase and lowercase letters, digits, and special characters.
+This password manager application provides a graphical user interface to generate strong, random passwords based on user-defined length and character sets, including uppercase and lowercase letters, digits, and special characters. It allows users to save generated passwords with associated usage (e.g., website or application) to a text file and manage them through the interface.
 
 ## Features
 
-- Generate strong random passwords.
-- Customize password length.
-- Save generated passwords with associated usage (e.g., website or application) to a text file.
+- Generate strong random passwords with a customizable length.
+- Save generated passwords with associated usage to a text file.
+- Copy passwords to the clipboard.
+- Delete passwords from the list.
+- Change the application theme.
 
 ## Requirements
 
 - Python 3.x
-- PySimpleGUI
-- pyperclip
+- PyQt6
 
 ## Installation
 
-Before running the script, you need to install the required Python package if you haven't already:
+Before running the application, you need to install the required Python package if you haven't already:
 
-PySimpleGui
-
-```bash
-pip install PySimpleGUI
-```
-
-pyperclip
+PyQt6
 
 ```bash
-pip install pyperclip
+pip install PyQt6
 ```
+
 
 ## Usage
 
-To use the password generator, run the `pass manager.py` script:
+To use the password manager, run the `password generator.py` script:
 
 ```bash
 python "PATH_TO_SCRIPT\password generator.py"
@@ -48,25 +44,31 @@ or:
 python3 "PATH_TO_SCRIPT\password generator.py"
 ```
 
-The GUI will prompt you to enter the desired password length and the purpose for which the password is being generated (e.g., the name of a website or application). After clicking the "Generate" button, the password will be displayed and saved to a file named `password.txt`. You can access the passwords from the list and copy them by clicking on the Copy button (You need to select a password first!). You can delete a password by selecting the desired one in the list and then pressing on the delete button.
+The GUI will prompt you to enter the desired password length and the purpose for which the password is being generated (e.g., the name of a website or application). After clicking the "Generate" button, the password will be displayed and saved to a file named `passwords.txt`. You can access the passwords from the list, copy them to the clipboard, and delete them as needed.
 
 ## Updates
 
+2.0:
+
+* Changed the entire GUI library from PySimpleGui to PyQt6.
+* Added the save_theme and load_theme function so it remembers the selected theme.
+
 1.3:
 
-* Added a Themes button so you will never get bored of the theme.
+* Added a Themes dropdown to change the application's theme.
+* Implemented theme persistence across sessions.
 
 1.2:
 
-* Added a delete button to delete unwanted or mistakenly generated passwords.
-* Improved the redability of the code.
-* Improved Error Handling.
+* Added a delete button to remove unwanted or mistakenly generated passwords.
+* Improved the readability of the code.
+* Improved error handling.
 
 1.1:
 
-* Added a list that shows the generated passwords.
+* Added a list to display generated passwords.
 * Added a Copy button to copy the selected password from the list.
 
 ## Disclaimer
 
-This script is for educational purposes only. Please ensure that you store and manage your passwords securely.
+This application is for educational purposes only. Please ensure that you store and manage your passwords securely.
