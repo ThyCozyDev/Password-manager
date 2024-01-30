@@ -15,7 +15,10 @@ env/
 *.conf
 
 # File containing passwords (IMPORTANT for security)
-passwords.txt
+passwords.aes
+
+# File Containing Key for Encryption (IMPORTANT for security)
+.encryption_key
 
 # Operating System generated files
 .DS_Store
