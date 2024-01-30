@@ -9,7 +9,7 @@ This password manager application provides a graphical user interface to generat
 ## Features
 
 - Generate strong random passwords with a customizable length.
-- Save generated passwords with associated usage to a text file.
+- Save generated passwords with associated usage to a .aes encrypted file.
 - Copy passwords to the clipboard.
 - Delete passwords from the list.
 - Change the application theme.
