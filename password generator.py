@@ -7,9 +7,9 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QClipboard, QIcon
 from functions import PasswordFunctions
 
-PASSWORDS_FILE = "passwords.txt"
+ENCRYPTED_PASSWORDS_FILE = "passwords.aes"
 function_instance = PasswordFunctions()
-passwords = function_instance.load_passwords_from_file(PASSWORDS_FILE)
+passwords = function_instance.load_passwords_from_file(ENCRYPTED_PASSWORDS_FILE)
 
 class PasswordManager(QWidget):
     def __init__(self):
@@ -97,18 +97,17 @@ class PasswordManager(QWidget):
             QMessageBox.critical(self, "Error", "Please enter a positive integer for password length.")
             return
 
-        # Generate the password
+            # Generate the password
         generated_password = function_instance.generate_password(password_length=password_length)
         self.password_output.setText(f"Your password is: {generated_password}")
-
+        
         # Save the password
-        with open(PASSWORDS_FILE, "a", encoding="utf-8") as password_file:
-            password_file.write(f"Website: {website}, Password: {generated_password}\n")
+        passwords.append(f"Website: {website}, Password: {generated_password}")
+        
+        function_instance.save_passwords_to_file(passwords, ENCRYPTED_PASSWORDS_FILE)
 
         # Update the password list
-        passwords.append(f"Website: {website}, Password: {generated_password}")
         self.update_password_list()
-
     def copy_password(self):
         selected_items = self.password_list.selectedItems()
         if selected_items:
